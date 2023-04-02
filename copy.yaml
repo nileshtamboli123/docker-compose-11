@@ -1,0 +1,11 @@
+- hosts: dev, qa
+  user: nilesh
+  become: yes
+  connection: ssh
+  gather_facts: yes
+  tasks:
+
+    - name: copy war file
+      action: copy src=/mnt/wars/ dest=/mnt/wars/
+    - name: copy docker-compose file
+      action: copy src=/mnt/docker/docker-compose-11/docker-compose.yaml dest=/home/nilesh/
